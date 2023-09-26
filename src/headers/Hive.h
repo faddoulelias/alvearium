@@ -1,0 +1,5 @@
+class Hive
+{
+private:
+public:
+};
