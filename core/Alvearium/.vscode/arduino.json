@@ -1,0 +1,6 @@
+{
+    "port": "COM7",
+    "board": "arduino:samd:mkrwan1310",
+    "programmer": "sam_ice",
+    "sketch": "Alvearium.ino"
+}
