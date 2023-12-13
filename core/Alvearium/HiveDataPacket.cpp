@@ -10,9 +10,9 @@ uint16_t serializeHumidity(int humidity)
     return (uint16_t)humidity;
 }
 
-uint16_t serializeMass(int mass)
+uint16_t serializeMass(double mass)
 {
-    return (uint16_t)mass;
+    return (uint16_t)(mass * 100);
 }
 
 float deserializeTemp(uint16_t temp)
@@ -27,7 +27,7 @@ float deserializeHumidity(uint16_t humidity)
 
 double deserializeMass(uint16_t mass)
 {
-    return (double)mass;
+    return (double)(mass) / 100.0;
 }
 
 HiveDataPacket::HiveDataPacket(std::array<float, 3> temperatures, float humidity, double mass)
