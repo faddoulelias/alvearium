@@ -65,8 +65,6 @@ environment that the bees are exposed to.
 A photoresistor is integrated into the system to measure ambient light
 conditions surrounding the beehive
 
-<!-- ![Photoresistor](./res/images/photoresistor.jpg)
-*A picture of the Photoresistor* -->
 <img src="./res/images/photoresistor.jpg" alt="Photoresistor" width="300" />
 
 ### Solar panel
@@ -74,8 +72,6 @@ conditions surrounding the beehive
 We use it in order to maintain the battery’s charge and to
 continuously recharge the LiPo battery during daylight hours.
 
-<!-- ![Solar panels](./res/images/solarpanel.jpg)
-*A picture of the Solar panels* -->
 <img src="./res/images/solarpanel.jpg" alt="Solar panels" width="300" />
 
 ### Battery with TPL5110 for Power Management
@@ -103,7 +99,7 @@ Before the making of a PCB Schematic, we made tests on a Labdec and we
 strongly advise you to do so.  
 Once our Labdec worked, we built our PCB Schematic on the same modele.
 
-<img src="./res/images/pcb-schematic.jpg" alt="PCB Schematic" width="300" />
+<img src="./res/images/pcb-schematic.jpg" alt="PCB Schematic" width="700" />
 
 As you can see, the Arduino MKRWAN pins are redirected to different grove connectors.
 
@@ -192,8 +188,6 @@ HX711 scale = HX711();
 - `double getWeight()`: Fetches weight data from the scale. 
 - `void setupBattery()`: Initializes pins for battery and light readings.
 
-
-The `setup()` and `loop()` functions are essential in the Arduino programming environment. `setup()` is called once when the program starts and is used to initialize settings, while `loop()` runs continuously, allowing the program to change and respond. Here's a detailed breakdown of these functions in the Alvearium project's code.
 ### setup() Function
 
 ```cpp
@@ -294,20 +288,29 @@ void loop()
 
 This code forms the backbone of the Alvearium project's environmental monitoring system. It efficiently manages sensor data collection and wireless transmission, ensuring minimal power consumption and reliable data acquisition. The integration of various sensors with LoRa connectivity exemplifies a well-orchestrated IoT application in environmental monitoring.
 
-## Requirements
-
-You must have an Arduino MKR WAN, a functionnal version of Arduino IDE,
-in order to download your code into the MKR WAN.  
-You also must have a LoRaWAN Connectivity and a network provider.  
-We chose The things Network, but feel free to use the one you feel
-confortable with. You will find in the "References" section a tutorial
-to get started with the device and the network provider.
-
 ## Setup
 
-## Functions
+### Introduction to The Things Network
+The Things Network (TTN) is a prominent player in the Internet of Things (IoT) domain, providing a decentralized and open-source network that enables devices to connect to the internet using Long Range Wide Area Network (LoRaWAN) technology. TTN is designed to facilitate low-power, long-range communication between IoT devices and the internet, making it an ideal solution for various applications ranging from environmental monitoring to smart city infrastructure.
 
-# Tests on the prototype
+
+### The Role of TTN in the Alvearium Project
+
+#### Integration with IoT Devices
+In the Alvearium project, TTN plays a critical role in bridging the gap between the on-field IoT devices (sensors) and the digital world. By leveraging TTN's LoRaWAN capabilities, the project's sensors can transmit collected data over long distances without the need for power-intensive communication methods.
+
+#### Data Transmission
+The environmental data collected by the Alvearium sensors, including humidity, temperature, weight, battery level, and light intensity, is transmitted to TTN. This data is encoded and sent using LoRa communication protocols, which are well-suited for transmitting small amounts of data over long ranges with minimal power consumption.
+
+#### Data Security and Management
+TTN ensures that the data transmitted from the Alvearium project's sensors is securely encrypted. This secure transmission is crucial for maintaining the integrity and confidentiality of the environmental data collected. Additionally, TTN provides a platform for managing and monitoring these data transmissions, allowing project administrators to track sensor performance, network coverage, and data flow.
+
+#### Connectivity and Accessibility
+By using TTN, the Alvearium project benefits from a vast, already established network infrastructure. This allows for a seamless and cost-effective implementation of IoT connectivity without the need to set up private networks. The accessibility of TTN also encourages community involvement and collaboration, fostering a supportive environment for IoT development.
+
+#### TTN Setup for the Alvearium Project
+
+<img src="./res/images/TTN-sandbox.png" alt="TTN Setup" width="800" />
 
 # Acknowledgments
 
