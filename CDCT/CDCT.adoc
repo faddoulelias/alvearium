@@ -1,0 +1,309 @@
+= Cahier des Charges - Alvearium (Projet Ruche)
+:author: Elias Faddoul, Baye Ousmane Niang, Aymeric Francisco, Sarah Houdeton
+:toc:
+
+== Introduction et Contexte
+
+**Titre du Projet:** Alvearium
+
+**Responsable du Projet:** Yann Douze
+
+**Description:** Le projet "Open Ruche" est conçu pour répondre à la menace croissante du syndrome d'effondrement des colonies d'abeilles (CCD) qui affecte les populations d'abeilles domestiques à travers le monde. L'objectif est de développer un système embarqué de surveillance des ruches, équipé de capteurs connectés. Ce système permettra de mesurer diverses données environnementales et biologiques et de les transmettre à une interface utilisateur via une application web. Les informations recueillies aideront les apiculteurs à surveiller et à gérer la santé et la productivité de leurs ruches plus efficacement. Ce système nous permet egalement de constater les vol de ruches et de les localiser et eventuellement de les empecher.
+
+== Objectifs du Projet
+**Objectif Principal:** 
+
+- Concevoir et développer un système embarqué connecté pour surveiller l'état des colonies d'abeilles.
+
+**Sous-objectifs:**
+
+- Intégration de capteurs pour mesurer le poids des ruches, la température intérieure/extérieure, l'humidité, et d'autres paramètres environnementaux.
+
+- Transmission des données via une technologie LPWAN (Low Power Wide Area Network) pour une communication efficace et à faible consommation d'énergie.
+
+- Développement d'une interface web pour visualiser les données en temps réel et recevoir des alertes sur les conditions anormales.
+
+- réation d'un prototype fonctionnel pour des tests sur le terrain.
+
+- Élaboration d'un produit final robuste et autonome, adapté à l'environnement extérieur.
+
+== Portée du Projet
+
+=== Inclus dans la Portée:
+
+- Conception et développement du système de capteurs et de leur intégration dans une ruche.
+
+- Programmation d'un microcontrôleur pour la collecte et la transmission des données.
+
+- Création d'une interface utilisateur pour le suivi des données et la réception des alertes.
+
+- Tests en salle de TP et sur le terrain pour valider la fonctionnalité du système.
+
+- Documentation technique, y compris les schémas de câblage et le guide utilisateur.
+
+=== Exclus de la Portée:
+
+- Développement de l'application mobile.
+
+- Production à grande échelle du système.
+
+- Recherche approfondie sur les causes du CCD au-delà de la portée de ce projet.
+
+- Maintenance à long terme du système après la phase de test.
+
+== Exigences et Spécifications
+
+=== Exigences Fonctionnelles
+
+==== Mesure et Transmission de Données :
+
+- Capacité à mesurer le poids de la ruche (0-120 kg, précision de 100 g, résolution de 10 g).
+
+- Mesure de la température intérieure (plage de -10°C à 85°C, précision de 0,5°C, résolution de 0,1°C) et extérieure de la ruche.
+
+- Surveillance de l'humidité à l'intérieur (0-100%, précision de 2%, résolution de 0,1%) et à l'extérieur de la ruche.
+
+- Détection de luminosité extérieure exprimée en lux.
+
+==== Interface Utilisateur et Alertes :
+
+- Affichage des données en temps réel sous forme graphique sur une interface web.
+
+- Capacité à envoyer des alertes via SMS ou email en cas de conditions anormales (par exemple, essaimage, poids anormal, température basse, charge de batterie faible).
+
+==== Communication et Stockage de Données :
+
+- Utilisation de la technologie LPWAN (LoRaWAN) pour la transmission des données.
+
+- Envoi des données toutes les 10 minutes, paramétrable via l'interface utilisateur.
+
+=== Exigences Techniques
+==== Composants Matériels :
+- Utilisation d'une carte microcontrôleur Arduino MKR WAN 1310.
+
+- Capteurs spécifiques pour la mesure de poids, température, humidité, et luminosité.
+
+- Batterie Li-Ion 3,7V 1050 mAh et panneaux solaires pour l'autonomie énergétique.
+
+- Boîtier robuste adapté pour l'usage extérieur.
+
+==== Conception du Circuit Électronique :
+
+
+- Réalisation d'un prototype initial sur carte Labdec (Breadboard).
+
+- Conception d'un circuit imprimé (PCB) pour le produit final.
+
+=== Exigences de Qualité
+
+==== Fiabilité et Précision des Mesures :
+
+- Les capteurs doivent fournir des données précises et fiables dans les plages spécifiées.
+
+- Calibration des capteurs en laboratoire avant l'installation sur le terrain.
+
+==== Robustesse et Durabilité :
+
+- Le système, y compris le boîtier et les composants, doit résister aux conditions extérieures (température, humidité, exposition solaire).
+
+- Le système doit maintenir une performance constante et fiable sur une période prolongée.
+
+==== Facilité d'Utilisation et d'Interaction :
+
+- Interface utilisateur intuitive pour la surveillance et la configuration des alertes.
+
+- Documentation claire pour l'installation, la maintenance et l'utilisation du système.
+
+== Contraintes du Projet "Open Ruche"
+
+=== Contraintes Budgétaires
+
+Pour établir un tableau de budget pour le projet "Open Ruche", nous devons considérer les coûts des composants matériels, du développement logiciel, ainsi que des dépenses annexes. Voici une estimation :
+
+[cols="1,1,1,1"]
+|===
+|Item                                   |Quantité   |Prix Unité (€) |Coût Total (€)
+|Arduino MKR WAN 1310                   |1          |40             |40
+|Batterie Li-Ion 3,7V 1050 mAh          |1          |15             |15
+|Capteur de température et humidité     |2          |15             |30
+|Capteur de poids + HX711               |1          |20             |20
+|Cellule solaire                        |1          |25             |25
+|Matériaux pour le boîtier              |-          |-              |30
+|Coûts de prototypage (PCB, etc.)       |-          |-              |50
+|Dépenses diverses (transport, etc.)    |-          |-              |20
+|Total                                  |           |               |230
+|===
+
+Note: Ces chiffres sont donnés à titre indicatif (source: [Amazon](https://www.amazon.fr/)), Ils peuvent varier en fonction des fournisseurs et des conditions de marché.
+
+=== Contraintes Temporelles
+
+==== Début du Projet :
+Démarrage officiel avec une première réunion le 15 novembre.
+
+==== Revue de Projet Intermédiaire :
+
+Prévue pour le 15 novembre. Cette revue inclut la démonstration du prototype sur la carte de prototypage, la visualisation des données sur une plateforme Cloud, l'analyse des risques, et la présentation d'un tableau de bord de pilotage du projet.
+
+==== Dernières Commandes de Composants :
+
+À effectuer au plus tard le 25 novembre pour garantir la disponibilité de tous les composants nécessaires.
+
+==== Visite et Installation des Prototypes :
+
+Prévue pour le 8 janvier au rucher de St Cyr. Cela marque le début des tests en conditions réelles.
+Récupération des Prototypes :
+
+Prévue pour le 16 janvier. Cela indique la fin des tests sur le terrain.
+
+==== Soutenance Finale de Projet :
+
+Fixée au 17 janvier. Cette soutenance inclura la présentation des résultats des tests effectués sur le terrain, ainsi que l'évaluation finale des prototypes.
+
+Ces dates sont cruciales pour la gestion du temps et des ressources du projet. Toutes les phases du projet, de la conception à la présentation finale, doivent être soigneusement planifiées pour respecter ces échéances. La réussite du projet dépend de la capacité de l'équipe à adhérer à ce calendrier tout en gérant efficacement les ressources et les contraintes techniques.
+
+
+=== Contraintes Ressources pour le Projet
+
+==== Équipe
+Le projet sera mené par une équipe de quatre membres :
+Elias Faddoul
+Baye Ousmane Niang
+Aymeric Francisco
+Sarah Houdeton
+
+==== Matériel et Environnement de Travail
+
+- **Matériel de Laboratoire :** L'équipe aura accès au matériel disponible dans la salle de travaux pratiques. Cette ressource inclut des outils et équipements nécessaires pour le prototypage, le test et la mise au point des composants du système.
+
+- **Prototypage et Tests :** Utilisation d'une carte Labdec (Breadboard) pour le développement initial du prototype, suivie par la réalisation d'un circuit imprimé (PCB) pour le produit final.
+
+==== Plateformes et Outils de Développement
+
+===== Plateformes Web  
+
+- **Ubidots STEM :** Utilisée pendant la phase de développement pour la visualisation des données et la création de tableaux de bord.
+
+- **The Things Network (TTN) :** Utilisée pour la communication des données via LPWAN.
+
+- **BEEP Monitor (beep.app.nl) :** Plateforme cible pour le rendu final du projet, permettant de regrouper les données de tous les prototypes de la classe sur un même compte.
+
+==== Environnements de Programmation
+
+- **IDE Arduino :** Aucune licence requise, utilisé pour la programmation du microcontrôleur.
+
+- **Visual Studio Code :** Utilisé pour le développement de logiciels, notamment pour l'interface utilisateur et la gestion des données.
+
+==== Autres Ressources
+- **Support Technique et Pédagogique :** L'équipe bénéficiera du soutien des enseignants et des mentors pour le guidage technique et la résolution des problèmes.
+
+- **Documentation et Ressources en Ligne :** Accès à une variété de ressources en ligne pour la recherche, l'apprentissage et la résolution de problèmes techniques spécifiques.
+
+== Critères d'Évaluation et de Réception
+
+Le résultat final du projet sera évalué et accepté en fonction des critères suivants.
+
+=== Fonctionnalité des Capteurs
+Précision et fiabilité des mesures de poids, température, humidité et luminosité.
+Conformité aux spécifications techniques définies.
+
+=== Performance de la Communication
+
+Efficacité de la transmission des données via LPWAN.
+Intégration réussie avec les plateformes Ubidots STEM et BEEP Monitor.
+
+=== Qualité de l'Interface Utilisateur
+Clarté et utilité de l'interface web pour la visualisation des données.
+Fonctionnalité des alertes (SMS ou email) pour les conditions anormales.
+
+=== Autonomie et Durabilité
+Performance de la batterie et du système solaire en termes de durée de vie et d'autonomie.
+Robustesse et résistance du boîtier et des composants dans un environnement extérieur.
+
+=== Présentation et Documentation
+Clarté et exhaustivité du guide utilisateur et de la documentation technique.
+Qualité de la présentation lors des soutenances, incluant les diaporamas et les démonstrations.
+
+=== Retours lors des Tests sur le Terrain
+
+Fiabilité des prototypes basée sur les résultats des tests effectués au rucher de St Cyr.
+
+Pertinence et efficacité des améliorations apportées suite aux tests.
+Responsabilités et Rôles
+
+=== Rôles et Responsabilités
+
+*Elias Faddoul :*
+Chef de projet : Supervision de l'ensemble du projet, coordination des activités et communication avec les enseignants et mentors.
+Développement logiciel : Programmation des microcontrôleurs et développement de l'interface utilisateur.
+
+*Baye Ousmane Niang :*
+Ingénierie électronique : Conception et réalisation du circuit imprimé (PCB), intégration des capteurs.
+Gestion de l'énergie : Optimisation de la consommation d'énergie et mise en place du système solaire.
+
+*Aymeric Francisco :*
+Développement de l'interface web : Création et maintenance de l'interface utilisateur sur les plateformes web.
+Tests et calibrations : Responsable des tests en laboratoire et sur le terrain, calibration des capteurs.
+
+*Sarah Houdeton :*
+Documentation technique : Rédaction du guide utilisateur et de la documentation technique.
+Assurance qualité : Vérification de la conformité du projet aux exigences et aux normes de qualité.
+
+== Gestion des Risques
+La gestion des risques pour le projet "Open Ruche" implique l'identification des risques potentiels et la mise en place de plans de mitigation pour minimiser leur impact. Voici les principaux risques identifiés et les stratégies correspondantes :
+
+=== Retards dans la réception des Composants
+
+*Risque :* Retard dans la réception des composants nécessaires au prototypage.
+
+*Mitigation :* Commande anticipée des composants, sélection de fournisseurs fiables, et planification d'alternatives en cas de retard.
+
+=== Défaillances Techniques des Capteurs ou du Microcontrôleur
+
+*Risque :* Problèmes de fonctionnement ou incompatibilités techniques.
+
+*Mitigation :* Tests préliminaires des composants, prototypage itératif pour identifier et résoudre les problèmes techniques.
+
+=== Difficultés de Programmation ou d'Intégration Logicielle
+*Risque :* Problèmes dans le développement de l'interface utilisateur ou l'intégration avec les 
+plateformes web.
+
+*Mitigation :* Allocation de temps supplémentaire pour le développement, collaboration avec des experts en programmation, utilisation de forums et ressources en ligne.
+
+=== Problèmes d'Autonomie Énergétique
+
+*Risque :* Insuffisance de la durée de vie de la batterie ou du panneau solaire.
+
+*Mitigation :* Tests rigoureux de la consommation d'énergie, choix de composants à haute efficacité, et conception d'un système de gestion de l'énergie optimisé.
+
+=== Limitations de la Technologie LPWAN
+
+*Risque :* Problèmes de couverture ou de fiabilité dans la transmission des données.
+
+*Mitigation :* Tests de communication dans divers environnements, utilisation de solutions de sauvegarde pour la transmission des données.
+
+== Processus de Modification
+Le processus pour apporter des modifications au cahier des charges du projet est structuré pour garantir que toutes les modifications sont bien documentées, évaluées et approuvées avant leur mise en œuvre. 
+
+=== Étapes du processus
+
+1. Identification de la Nécessité de Modification :
+Tout membre de l'équipe peut identifier le besoin d'une modification en fonction de nouvelles informations, de problèmes rencontrés ou de changements dans les exigences du projet.
+Documentation et Proposition :
+
+2. La modification proposée doit être documentée en détail, incluant l'impact sur le projet, les coûts, le temps nécessaire, et les avantages attendus.
+Évaluation et Approbation :
+
+3. La proposition est soumise à l'équipe pour évaluation. Cela peut impliquer des discussions, des consultations avec des mentors ou des experts, et une analyse des impacts potentiels.
+Mise à Jour du Cahier des Charges :
+
+4. Si la modification est approuvée, le cahier des charges est mis à jour pour refléter les changements. Toutes les parties prenantes sont informées des modifications.
+
+=== Suivi et Réévaluation 
+Après la mise en œuvre, la modification est surveillée pour évaluer son efficacité. Des ajustements supplémentaires peuvent être apportés si nécessaire.
+Ce processus assure que le projet reste aligné sur ses objectifs initiaux tout en étant flexible face aux changements nécessaires pour son succès.
+
+== Conclusion
+En conclusion, ce cahier des charges pour le projet "Open Ruche"établit une feuille de route détaillée pour la conception, le développement et la mise en œuvre d'un système embarqué innovant pour la surveillance des colonies d'abeilles. Il définit clairement les objectifs, les spécifications techniques, les contraintes et les responsabilités, tout en mettant en place un cadre solide pour la gestion des risques et le processus de modification.
+
+Ce document servira de guide essentiel à l'équipe du projet, composée de Elias Faddoul, Baye Ousmane Niang, Aymeric Francisco et Sarah Houdeton, en assurant que toutes les étapes, de la conception initiale à la soutenance finale, sont menées avec rigueur et conformément aux attentes établies. L'approche méthodique et la planification détaillée présentées dans ce cahier des charges sont cruciales pour la réussite du projet et contribueront à atteindre l'objectif final de fournir une solution viable et efficace pour la surveillance et la gestion de la santé des colonies d'abeilles.

@@ -1,5 +1,0 @@
-class Hive
-{
-private:
-public:
-};

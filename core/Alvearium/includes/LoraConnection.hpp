@@ -1,3 +1,4 @@
+#pragma once
 #include <MKRWAN.h>
 
 class LoraConnection
