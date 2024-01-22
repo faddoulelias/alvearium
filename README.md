@@ -65,8 +65,6 @@ environment that the bees are exposed to.
 A photoresistor is integrated into the system to measure ambient light
 conditions surrounding the beehive
 
-<!-- ![Photoresistor](./res/images/photoresistor.jpg)
-*A picture of the Photoresistor* -->
 <img src="./res/images/photoresistor.jpg" alt="Photoresistor" width="300" />
 
 ### Solar panel
@@ -74,8 +72,6 @@ conditions surrounding the beehive
 We use it in order to maintain the battery’s charge and to
 continuously recharge the LiPo battery during daylight hours.
 
-<!-- ![Solar panels](./res/images/solarpanel.jpg)
-*A picture of the Solar panels* -->
 <img src="./res/images/solarpanel.jpg" alt="Solar panels" width="300" />
 
 ### Battery with TPL5110 for Power Management
@@ -192,8 +188,6 @@ HX711 scale = HX711();
 - `double getWeight()`: Fetches weight data from the scale. 
 - `void setupBattery()`: Initializes pins for battery and light readings.
 
-
-The `setup()` and `loop()` functions are essential in the Arduino programming environment. `setup()` is called once when the program starts and is used to initialize settings, while `loop()` runs continuously, allowing the program to change and respond. Here's a detailed breakdown of these functions in the Alvearium project's code.
 ### setup() Function
 
 ```cpp
