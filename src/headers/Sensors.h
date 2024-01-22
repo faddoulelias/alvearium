@@ -1,5 +1,0 @@
-class Sensors
-{
-protected:
-public:
-};
